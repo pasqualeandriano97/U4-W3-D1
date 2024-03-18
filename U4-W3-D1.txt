@@ -1,0 +1,57 @@
+Esercizio1.
+
+
+SELECT * FROM public."Clienti"
+WHERE "Nome"='Mario'
+ORDER BY "NumeroCliente" ASC 
+
+
+Esercizio 2.
+
+
+SELECT "Nome","Cognome" FROM public."Clienti"
+WHERE EXTRACT(YEAR FROM "AnnoDiNascita" )= '1982'
+ORDER BY "NumeroCliente" ASC 
+
+
+Esercizio 3.
+
+
+select "NumeroFattura" from "Fatture"
+WHERE "Iva" = 20
+
+
+Esercizio 4.
+
+
+SELECT * FROM "Prodotti"
+WHERE EXTRACT(YEAR FROM "DataAttivazione")=2017 AND ("InProduzione"=true OR "InCommercio"=true)
+ORDER BY "IdProdotto" ASC
+
+
+Esercizio 5.
+
+
+SELECT * FROM "Fatture" INNER JOIN "Clienti" ON "Fatture"."NumeroFattura"="Clienti"."NumeroCliente"
+WHERE "Importo"<1000
+
+
+Esercizio 6.
+
+
+SELECT "NumeroFattura", "Importo","Iva","DataFattura", "Denominazione" FROM "Fatture" INNER JOIN "Fornitori" ON "Fatture"."NumeroFornitore"="Fornitori"."NumeroFornitore"
+
+
+Esercizio 7.
+
+
+SELECT COUNT(*),EXTRACT(YEAR FROM "DataFattura") FROM "Fatture"
+WHERE "Iva"=20
+GROUP BY EXTRACT(YEAR FROM "DataFattura")
+
+
+Esercizio 8.
+
+
+
+
