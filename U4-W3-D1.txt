@@ -53,5 +53,7 @@ GROUP BY EXTRACT(YEAR FROM "DataFattura")
 Esercizio 8.
 
 
+SELECT COUNT(*),SUM("Importo"),EXTRACT(YEAR FROM "DataFattura") FROM "Fatture"
 
+GROUP BY EXTRACT(YEAR FROM "DataFattura")
 
